@@ -1,5 +1,5 @@
 h1 {
-    text-align: center;
+  text-align: center;
 }
 .input-field {
   height: 30px;
@@ -12,6 +12,7 @@ h1 {
 .add-button {
   margin-right: 5px;
   height: 100%;
+  width: 35px;
 }
 
 .container {
@@ -23,7 +24,8 @@ h1 {
 }
 
 .user-input {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   /* background-color: blue; */
 }
 
