@@ -9,8 +9,12 @@ function App() {
     event.preventDefault();
     const formData = new FormData(event.target);
     const formJson = Object.fromEntries(formData.entries());
-    setTasks([...tasks, formJson.userInput]);
-    event.target.reset();
+    if (formJson.userInput === "") {
+      alert("You need a task to add");
+    } else {
+      setTasks([...tasks, formJson.userInput]);
+      event.target.reset();
+    }
   }
 
   return (
@@ -23,7 +27,12 @@ function App() {
               +
             </button>
             <label>
-              <input className="input-field" name="userInput" type="text" />
+              <input
+                className="input-field"
+                name="userInput"
+                type="text"
+                placeholder="add task"
+              />
             </label>
           </form>
         </div>
