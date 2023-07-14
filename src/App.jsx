@@ -28,8 +28,9 @@ function App() {
 
   function handleOnChange(event) {
     let userInputLength = event.target.value.length;
-    if (userInputLength === 250) {
-      alert("Must be less than 250 characters");
+    const wordLimit = 100;
+    if (userInputLength === wordLimit) {
+      alert(`Must be less than ${wordLimit} characters`);
     }
   }
 
@@ -38,7 +39,7 @@ function App() {
       <h1>Todo Website</h1>
       <div className="container">
         <div className="user-input">
-          <form onSubmit={(event) => handleSubmit(event)}>
+          <form onSubmit={handleSubmit}>
             <button className="add-button" type="submit">
               Add
             </button>
@@ -49,7 +50,7 @@ function App() {
                 type="text"
                 placeholder="Add task"
                 maxLength="250"
-                onChange={(event) => handleOnChange(event)}
+                onChange={handleOnChange}
                 required
               />
             </label>
