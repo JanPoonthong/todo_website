@@ -1,8 +1,5 @@
-h1 {
-  text-align: center;
-}
 .input-field {
-  height: 30px;
+  height: 100%;
 }
 
 .remove-button {
@@ -32,10 +29,6 @@ h1 {
   display: flex;
   justify-content: center;
   /* background-color: blue; */
-}
-
-p {
-  display: inline-block;
 }
 
 .each-todo {

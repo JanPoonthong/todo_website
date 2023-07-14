@@ -1,5 +1,13 @@
 body {
   font-family: "VT323", monospace;
-  font-size: 25px;
+  font-size: 30px;
   background-color: #f6f9ff;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  display: inline-block;
 }

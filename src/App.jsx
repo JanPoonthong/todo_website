@@ -6,6 +6,7 @@ function App() {
 
   function handleRemove(index, clickedTask) {
     // FIXME(jan): same word will get remove
+    tasks.splice(index, 1)
     const newTasks = tasks.filter((task) => task !== clickedTask);
     console.log(tasks.filter((task) => task !== clickedTask));
     setTasks(newTasks);
