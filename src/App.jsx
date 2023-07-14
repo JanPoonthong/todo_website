@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import binImage from "./assets/bin.png";
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
   function handleRemove(index, clickedTask) {
     // FIXME(jan): same word will get remove
-    tasks.splice(index, 1)
+    tasks.splice(index, 1);
     const newTasks = tasks.filter((task) => task !== clickedTask);
     console.log(tasks.filter((task) => task !== clickedTask));
     setTasks(newTasks);
@@ -36,7 +37,7 @@ function App() {
         <div className="user-input">
           <form onSubmit={handleSubmit}>
             <button className="add-button" type="submit">
-              +
+              Add
             </button>
             <label>
               <input
@@ -52,18 +53,16 @@ function App() {
           </form>
         </div>
 
-        <div className="each-todo">
+        <div className="container-todo">
           {tasks.map((task, index) => (
-            <div key={index}>
+            <div className="each-todo" key={index}>
               <input type="checkbox" />
               <p className="task">{task}</p>
 
               <button
                 onClick={() => handleRemove(index, task)}
                 className="remove-button"
-              >
-                X
-              </button>
+              ></button>
             </div>
           ))}
         </div>
