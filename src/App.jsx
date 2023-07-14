@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import binImage from "./assets/bin.png";
 
 function App() {
   const [tasks, setTasks] = useState([]);
