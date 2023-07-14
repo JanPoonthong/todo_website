@@ -7,8 +7,8 @@ function App() {
 
   function handleRemove(task) {
     task.remove = true;
-    const result = tasks.filter((task) => task.remove === false);
-    setTasks(result);
+    const updatedTasks = tasks.filter((t) => t.id !== task.id);
+    setTasks(updatedTasks);
   }
 
   function handleSubmit(event) {
@@ -17,15 +17,13 @@ function App() {
     const formData = new FormData(event.target);
     const formJson = Object.fromEntries(formData.entries());
 
-    setTasks([
-      ...tasks,
-      {
-        id: uuidv4(),
-        text: formJson.userInput,
-        completed: false,
-        remove: false,
-      },
-    ]);
+    const newTask = {
+      id: uuidv4(),
+      text: formJson.userInput,
+      completed: false,
+    };
+
+    setTasks([...tasks, newTask]);
     event.target.reset();
   }
 
