@@ -18,7 +18,15 @@ function App() {
     const formData = new FormData(event.target);
     const formJson = Object.fromEntries(formData.entries());
 
-    setTasks([...tasks, formJson.userInput]);
+    setTasks([
+      ...tasks,
+      {
+        id: uuidv4(),
+        text: formJson.userInput,
+        completed: false,
+        remove: false,
+      },
+    ]);
     event.target.reset();
   }
 
