@@ -1,15 +1,14 @@
 import { useState } from "react";
 import "./App.css";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  function handleRemove(index, clickedTask) {
-    // FIXME(jan): same word will get remove
-    tasks.splice(index, 1);
-    const newTasks = tasks.filter((task) => task !== clickedTask);
-    console.log(tasks.filter((task) => task !== clickedTask));
-    setTasks(newTasks);
+  function handleRemove(task) {
+    task.remove = true;
+    const result = tasks.filter((task) => task.remove === false);
+    setTasks(result);
   }
 
   function handleSubmit(event) {
@@ -42,7 +41,7 @@ function App() {
       <h1>Todo Website</h1>
       <div className="container">
         <div className="user-input">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={(event) => handleSubmit(event)}>
             <button className="add-button" type="submit">
               Add
             </button>
@@ -53,7 +52,7 @@ function App() {
                 type="text"
                 placeholder="Add task"
                 maxLength="250"
-                onChange={handleOnChange}
+                onChange={(event) => handleOnChange(event)}
                 required
               />
             </label>
@@ -61,13 +60,13 @@ function App() {
         </div>
 
         <div className="container-todo">
-          {tasks.map((task, index) => (
-            <div className="each-todo" key={index}>
+          {tasks.map((task) => (
+            <div className="each-todo" key={task.id}>
               <input type="checkbox" />
-              <p className="task">{task}</p>
+              <p className="task">{task.text}</p>
 
               <button
-                onClick={() => handleRemove(index, task)}
+                onClick={() => handleRemove(task)}
                 className="remove-button"
               ></button>
             </div>
