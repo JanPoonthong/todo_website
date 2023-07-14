@@ -6,7 +6,6 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   function handleRemove(task) {
-    task.remove = true;
     const updatedTasks = tasks.filter((t) => t.id !== task.id);
     setTasks(updatedTasks);
   }
