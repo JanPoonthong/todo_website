@@ -44,6 +44,17 @@ function App() {
     }
   }
 
+  function handleCheckBox(event, task) {
+    const updatedTasks = [...tasks];
+    const taskIndex = tasks.findIndex((item) => item.id === task.id);
+    if (event.target.checked) {
+      updatedTasks[taskIndex].completed = true;
+    } else {
+      updatedTasks[taskIndex].completed = false;
+    }
+    setTasks(updatedTasks);
+  }
+
   return (
     <>
       <h1>Todo Website</h1>
@@ -73,7 +84,12 @@ function App() {
               {index + 1}.
               <ol>
                 <li>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    id="checkbox"
+                    onChange={(event) => handleCheckBox(event, task)}
+                    checked={task.completed}
+                  />
                   <del className="task">{task.text}</del>
                 </li>
                 {/* <p className="task">{task.text}</p> */}
