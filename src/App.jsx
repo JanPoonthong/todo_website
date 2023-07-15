@@ -68,11 +68,16 @@ function App() {
         </div>
 
         <div className="container-todo">
-          {tasks.map((task) => (
+          {tasks.map((task, index) => (
             <div className="each-todo" key={task.id}>
-              <input type="checkbox" />
-              <p className="task">{task.text}</p>
-
+              {index + 1}.
+              <ol>
+                <li>
+                  <input type="checkbox" />
+                  <del className="task">{task.text}</del>
+                </li>
+                {/* <p className="task">{task.text}</p> */}
+              </ol>
               <button
                 onClick={() => handleRemove(task)}
                 className="remove-button"

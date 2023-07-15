@@ -33,6 +33,18 @@
   align-items: center;
 }
 
+li {
+  list-style-type: none;
+}
+
+ol li del {
+  text-decoration: none;
+}
+
+ol li input[type="checkbox"]:checked ~ del {
+  text-decoration: line-through;
+}
+
 .container-todo {
   text-align: center;
   word-wrap: break-word;
