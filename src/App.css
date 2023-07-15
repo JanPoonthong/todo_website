@@ -9,6 +9,8 @@
     url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+cHDgobBDamoOwAAAPpSURBVEjHhZRNbFRVFMd/574382aYzvRjrJYxWERKQ1IQEoyGD0FRE2JcGJZsiCZ+ROLShXHJxojRBVtDTAgJCwMJmpgYlbDQBREVIWBMIBkKtA0tLe3Mmzfv3XtczJvOdArhbN69J+f9z8f/f67QYxe4RCk9y7JXEHJsZ46XeuL9XoASAX2By6k4Y1ouBaNC0PTrmd7wlQAn+YIfOEPl7ehd6+EDqqCoqMfIL5s/PxPv5FWOrga4yiX2M00JO/DykzdGawOJVXXaKsCoMdnAPXNiolZ9evY13sOgrKHcbvMYFxniClNUOXzo1qfrj2883ZBZu6RgsZpj0Bv1buy9/Jn/zbnj4DPCEns416rgE2YIkP78xKaBrZmpfQsb7mx9cF+IYxBEoKELUvUam+dH87sP3RbJJMU/ktub2MA7CCggHNlz9US41oKvGWmKU13mQBUBUdFAYpqeBLUnPvjurKbscBCGmofHn584kBn2U+oUQXvm3QZMcNG/31/+c8upazc/xod5GAzfr43t1QHyPMYUaRBmrx2c3b302+zNOn6azZ+TC5Lrks4jTMChchd8Kwk+PmSQMDhv5v/bks+UHguh1Kjb5Ir/j5nJYPBhG2aqdGThjd9PVAb34i0Hdrpeeb7OlXjkq7dOB3GJHAYimu56GDZCKfAcZTwMPmt5lgIGQ571rCOLwTDERgZpsFj/tRHZOoqBr9lOhDNIhV2sw+DhMa4vagmDocAO3UaAwVBhl46CGK/B33zJ7paUvbRMg+CIAA8V0YQIiBGBJhFgERHAiaaMGYDbGHAoyKxLEhISFMQSk5AASsvr2mSoUu4AQGvn1OlPrt4rnJUsCoCKQqEDoChOFSBaJcAeEttfTRfZdLtXp02vbuVdEPWorgTQtLiHii/ESo+vvSumJzp4WOvqHrlZLQBpDRExst8r8HgTpJ3b7wxFFRiWdjOrBtIuuqUDy0h3BYIoj/gNJGWvsw8O0iH6XfkVwFIHPCwQUUNYg+adCamjxODUgFWXUuMDZFDUqSpQYxLFp4HqPakiWBIvYpJFlDEQQRULSx0AISBr89pkhhL7VMQwrMI4ZTz6gCw7iHE8xbSE5JNiFKYz8AGGyJOLS4tJuWoGeV0NiKLsRIAYxecVMghz3CK0/feKixnWdgDGuUn/dfko++bZD8XzW+KSZeV3ceCwWjw19m32ryYbOwAxl6nMX/xxbP7B9vpwLYMv7ecZVQ011FhVBPKueL9y8uTPB5nmhQ5nc9ylj2MUglq5nmt4zognqbJVtalNbAsuq6Wkf+F8dJQifWzuzAAsDfKR3lG0a+dSipc9DgtMYtP88D/byKzGevtLcAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wNy0xNFQxMDoyNzowNCswMDowMP+9oOAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMDctMTRUMTA6Mjc6MDQrMDA6MDCO4BhcAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIzLTA3LTE0VDEwOjI3OjA0KzAwOjAw2fU5gwAAAABJRU5ErkJggg==");
   background-repeat: no-repeat;
   border-radius: 4px;
+  margin-left: 10px;
+  height: 0px;
 }
 
 .add-button {
@@ -35,6 +37,13 @@
 
 li {
   list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ol {
+  padding: 0px;
+  width: 100%;
 }
 
 ol li del {
@@ -52,10 +61,11 @@ ol li input[type="checkbox"]:checked ~ del {
 
 .each-todo {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  justify-content: space-between;
 }
 
 .task {
-  width: 100%;
+  width: 90%;
 }

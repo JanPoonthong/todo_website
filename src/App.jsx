@@ -70,7 +70,7 @@ function App() {
                 name="userInput"
                 type="text"
                 placeholder="Add task"
-                maxLength="250"
+                maxLength="100"
                 onChange={handleOnChange}
                 required
               />
@@ -81,7 +81,7 @@ function App() {
         <div className="container-todo">
           {tasks.map((task, index) => (
             <div className="each-todo" key={task.id}>
-              {index + 1}.
+              <p>{index + 1}.</p>
               <ol>
                 <li>
                   <input
@@ -91,13 +91,13 @@ function App() {
                     checked={task.completed}
                   />
                   <del className="task">{task.text}</del>
+                  <button
+                    onClick={() => handleRemove(task)}
+                    className="remove-button"
+                  ></button>
                 </li>
                 {/* <p className="task">{task.text}</p> */}
               </ol>
-              <button
-                onClick={() => handleRemove(task)}
-                className="remove-button"
-              ></button>
             </div>
           ))}
         </div>
