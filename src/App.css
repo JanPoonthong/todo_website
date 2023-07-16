@@ -52,6 +52,8 @@ ol li del {
 
 ol li input[type="checkbox"]:checked ~ del {
   text-decoration: line-through;
+  color: #888;
+  opacity: 0.6;
 }
 
 .container-todo {
