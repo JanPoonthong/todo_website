@@ -96,7 +96,6 @@ function App() {
                     className="remove-button"
                   ></button>
                 </li>
-                {/* <p className="task">{task.text}</p> */}
               </ol>
             </div>
           ))}
