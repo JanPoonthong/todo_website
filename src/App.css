@@ -70,3 +70,7 @@ ol li input[type="checkbox"]:checked ~ del {
 .task {
   width: 90%;
 }
+
+.completed-count {
+  text-align: center;
+}
