@@ -11,14 +11,21 @@ function App() {
 
   useEffect(() => {
     const data = localStorage.getItem("data");
+    const trackCompleted = localStorage.getItem("trackCompleted");
+
     if (data) {
       setTasks(JSON.parse(data));
+    }
+
+    if (trackCompleted) {
+      setCountCompleted(parseInt(trackCompleted));
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(tasks));
-  }, [tasks]);
+    localStorage.setItem("trackCompleted", countCompleted);
+  }, [tasks, countCompleted]);
 
   function handleRemove(task) {
     const updatedTasks = tasks.filter((t) => t.id !== task.id);
